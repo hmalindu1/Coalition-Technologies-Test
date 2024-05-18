@@ -11,6 +11,7 @@ const config: Config = {
       colors: {
         bgMain: '#F6F7F8',
         navBarActive: '#01F0D0',
+        patientListSelect: '#D8FCF7',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -19,6 +20,10 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar')({
+      nocompatible: true,
+    }),
+  ],
 }
 export default config
