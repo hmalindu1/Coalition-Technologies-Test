@@ -1,15 +1,27 @@
+// components/PatientList.tsx
 'use client'
 
 import HorizontalDots from '@/assets/icons/patientList/HorizontalDots'
 import SearchIcon from '@/assets/icons/patientList/SearchIcon'
 import Image from 'next/image'
-import { useState } from 'react'
+import { usePatientContext } from '@/hooks/PatientContext' // Correct import path
 
 interface Patient {
   name: string
   gender: string
   age: number
   profile_picture: string
+  date_of_birth: string
+  phone_number: string
+  emergency_contact: string
+  insurance_type: string
+  diagnostic_list: [
+    {
+      name: string
+      description: string
+      status: string
+    }
+  ]
 }
 
 interface PatientListProps {
@@ -17,10 +29,10 @@ interface PatientListProps {
 }
 
 const PatientList = ({ patients }: PatientListProps) => {
-  const [selectedPatient, setSelectedPatient] = useState<string | null>(null)
+  const { selectedPatient, setSelectedPatient } = usePatientContext()
 
   return (
-    <div className="w-[364px] h-[1054px] bg-white shadow-sm rounded-2xl mt-10">
+    <div className="w-[364px] h-[1054px] bg-white shadow-sm rounded-2xl mt-5">
       <div className="flex items-center justify-between mb-4 p-4">
         <h2 className="text-2xl font-bold">Patients</h2>
         <div className="flex items-center ">
@@ -32,9 +44,11 @@ const PatientList = ({ patients }: PatientListProps) => {
           <li
             key={index}
             className={`py-3 mb-2 cursor-pointer flex items-center ${
-              selectedPatient === patient.name ? 'bg-patientListSelect' : ''
+              selectedPatient?.name === patient.name
+                ? 'bg-patientListSelect'
+                : ''
             }`}
-            onClick={() => setSelectedPatient(patient.name)}
+            onClick={() => setSelectedPatient(patient)}
           >
             <Image
               src={patient.profile_picture}
@@ -49,7 +63,7 @@ const PatientList = ({ patients }: PatientListProps) => {
                 {patient.gender}, {patient.age}
               </p>
             </div>
-            <div className='mr-4'>
+            <div className="mr-4">
               <HorizontalDots />
             </div>
           </li>
