@@ -1,4 +1,3 @@
-// components/DiagnosticList.tsx
 'use client'
 
 import { usePatientContext } from '@/hooks/PatientContext'
