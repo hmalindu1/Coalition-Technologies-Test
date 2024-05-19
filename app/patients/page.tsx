@@ -5,6 +5,7 @@ import { PatientProvider } from '@/hooks/PatientContext'
 import DiagnosticList from '@/components/DiagnosticList'
 import { LabResults } from '@/components/LabResults'
 import BloodPressureChart from '@/components/BloodPressureChart'
+import DiagnosisHistory from '@/components/DiagnosisHistory'
 
 async function getAllPatients() {
   const username = 'coalition'
@@ -38,8 +39,8 @@ const Page = async () => {
       <div className="my-5 flex flex-1 justify-between">
         <PatientList patients={allPatientData} />
         <div className="flex flex-col justify-between">
+          <DiagnosisHistory />
           <DiagnosticList />
-          <BloodPressureChart />
         </div>
         <div className="flex flex-col justify-between">
           <PatientInformation />
