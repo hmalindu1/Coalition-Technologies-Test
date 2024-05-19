@@ -12,6 +12,9 @@ const config: Config = {
         bgMain: '#F6F7F8',
         navBarActive: '#01F0D0',
         patientListSelect: '#D8FCF7',
+        chartBackground: '#F4F0FE',
+        Systolic: '#E66FD2',
+        Diastolic: '#8C6FE6',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
