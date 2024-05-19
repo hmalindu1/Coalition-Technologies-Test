@@ -1,20 +1,16 @@
 'use client'
-
 import { createContext, useState, useContext, ReactNode } from 'react'
 
-interface DiagnosticsHistory {
+interface DiagnosisHistory {
   month: string
   year: number
   blood_pressure: {
-    systolic: {
-      value: number
-      levels: string
-    }
-    diastolic: {
-      value: number
-      levels: string
-    }
+    systolic: { value: number; levels: string }
+    diastolic: { value: number; levels: string }
   }
+  heart_rate: { value: number; levels: string }
+  respiratory_rate: { value: number; levels: string }
+  temperature: { value: number; levels: string }
 }
 
 interface Diagnostic {
@@ -34,7 +30,7 @@ interface Patient {
   insurance_type: string
   diagnostic_list: Diagnostic[]
   lab_results: string[]
-  diagnosis_history: DiagnosticsHistory[]
+  diagnosis_history: DiagnosisHistory[]
 }
 
 interface PatientContextProps {
