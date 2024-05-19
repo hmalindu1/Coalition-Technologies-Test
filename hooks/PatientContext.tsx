@@ -2,6 +2,20 @@
 
 import { createContext, useState, useContext, ReactNode } from 'react'
 
+interface DiagnosticsHistory {
+  month: string
+  year: number
+  blood_pressure: {
+    systolic: {
+      value: number
+      levels: string
+    }
+    diastolic: {
+      value: number
+      levels: string
+    }
+  }
+}
 
 interface Diagnostic {
   name: string
@@ -20,6 +34,7 @@ interface Patient {
   insurance_type: string
   diagnostic_list: Diagnostic[]
   lab_results: string[]
+  diagnosis_history: DiagnosticsHistory[]
 }
 
 interface PatientContextProps {
