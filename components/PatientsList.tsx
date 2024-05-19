@@ -32,7 +32,7 @@ const PatientList = ({ patients }: PatientListProps) => {
   const { selectedPatient, setSelectedPatient } = usePatientContext()
 
   return (
-    <div className="w-[364px] h-[1054px] bg-white shadow-sm rounded-2xl mt-5">
+    <div className="w-[364px] h-[1054px] bg-white shadow-sm rounded-2xl mt-3">
       <div className="flex items-center justify-between mb-4 p-4">
         <h2 className="text-2xl font-bold">Patients</h2>
         <div className="flex items-center ">
