@@ -1,7 +1,7 @@
-// hooks/PatientContext.tsx
 'use client'
 
 import { createContext, useState, useContext, ReactNode } from 'react'
+
 
 interface Diagnostic {
   name: string
@@ -19,6 +19,7 @@ interface Patient {
   emergency_contact: string
   insurance_type: string
   diagnostic_list: Diagnostic[]
+  lab_results: string[]
 }
 
 interface PatientContextProps {
