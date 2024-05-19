@@ -183,7 +183,12 @@ const BloodPressureChart = () => {
             <span className="h-3 w-3 bg-Systolic rounded-full mr-2"></span>
             Systolic
           </div>
-          <div className="text-[22px] font-bold text-gray-900">160</div>
+          <div className="text-[22px] font-bold text-gray-900">
+            {
+              selectedPatient?.diagnosis_history[0].blood_pressure.systolic
+                .value
+            }
+          </div>
           <div className="text-gray-600 text-[14px] flex items-center gap-2">
             {' '}
             <span>
@@ -198,7 +203,12 @@ const BloodPressureChart = () => {
             <span className="h-3 w-3 bg-Diastolic rounded-full mr-2"></span>
             Diastolic
           </div>
-          <div className="text-[22px] font-bold text-gray-900">78</div>
+          <div className="text-[22px] font-bold text-gray-900">
+            {
+              selectedPatient?.diagnosis_history[0].blood_pressure.diastolic
+                .value
+            }
+          </div>
           <div className="text-gray-600 text-[14px] flex items-center gap-2">
             {' '}
             <span>
