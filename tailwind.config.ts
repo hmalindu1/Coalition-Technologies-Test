@@ -15,6 +15,9 @@ const config: Config = {
         chartBackground: '#F4F0FE',
         Systolic: '#E66FD2',
         Diastolic: '#8C6FE6',
+        respiratoryRate: '#E0F3FA',
+        temperature: '#FFE6E9',
+        heartRate: '#FFE6F1',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
